@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=ABeeZee&family=Hanken+Grotesk:wght@400;700&family=Noto+Sans:wght@300&display=swap');
+
+html {
+	box-sizing: border-box;
+}
+
+body{
+    margin: 80px;
+	min-height: 70vh;
+    background-image: linear-gradient(90deg, #e9defa 0%, #fbfcdb 100%);
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+  
+  img {
+    max-width: 100%;
+    max-height:100%;
+    border-radius: 50% 50% 5% 5%;
+  }
+  
+  .text {
+    font-size: 20px;
+    padding-left: 20px;
+    text-align: center;
+  }
+  .login-header{
+    display: block;
+    align-items: center;
+    color: #800080;
+  }
+  .header1{
+    font-family: 'Hanken Grotesk', sans-serif;
+    color: #800080;
+    font-size: 3rem;
+  }
+  .header2{
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 2rem;
+    color: #a359a0;
+  }
+  .loginbtn{
+    padding: 14px 28px;
+    border: 2px solid #800080;
+    background-color: inherit;
+    font-size: 1.2rem;
+    color:#a359a0;  
+}
+
+.loginbtn:hover{
+    background-color: #a359a1;
+    opacity: 0.7;
+    color: #fbfcdb;
+}
+
+.sign-up-pic{
+    align-items: center;
+    width:12rem;
+    height: 10rem;
+}
+a{
+    text-decoration: none;
+}
+input{
+    border: 2px solid #800080;
+    width:  15rem;
+    height: 1.5rem;
+}
+input,label{
+    display: block;
+}
+
