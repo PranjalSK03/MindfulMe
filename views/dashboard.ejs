@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="/css/style.css">
+		<title>Happy Page</title>
+    </head>
+    <body>
+        <h3><%= name %> - <%= currDate %></h3>
+        <% if(usrThoughts.length !== 0) { %>
+            <% for(var i=0; i<usrThoughts.length; i++) {%>
+                <p><%= usrThoughts[i].Date %></p>
+                <p><%= usrThoughts[i].scale %></p>
+                <p><%= usrThoughts[i].thought %></p>
+            <% } %>
+        <% } else { %>
+            <p>Not started !!! record your mood today --></p>
+            <a href="/userPage"></a>
+        <% } %>
+
+        <h2>Your REPORT !!!</h2> 
+        <% if(report >= 7) {%>
+            <h3>"Nice going ! life is fun when you are happy !"</h3>
+        <% } else if (report <=3){ %>
+            <h3>"Not all day are good but you need to keep your self happy!"</h3>
+        <% } else { %>
+            <h3>"too rough days it seems, please seek help and talk to some one !"</h3>
+        <% } %>
+
+        <a href="/userPage">Emotional Compass</a>
+        <a href="/login">Logout</a>
+    </body>
+</html>

@@ -1,6 +1,7 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
+const date = require(__dirname + "/date.js");
 
 const app = express();
 
@@ -20,6 +21,7 @@ const userSchema = new mongoose.Schema({
     thread : [
         {
             Date : String,
+            scale : Number,
             thought : String
         }
     ]
@@ -29,6 +31,7 @@ const User = mongoose.model("User", userSchema);
 
 var usrMail = ""; // gobal name
 var regErrString = "";
+var rating = 5;
 
 app.get('/',(req,res)=>{
     usrMail = "";
@@ -50,27 +53,88 @@ app.get('/loginError',(req,res)=>{
     regErrString = "";
     res.render('login_error.ejs');
 });
+
 app.get('/registerError',(req,res)=>{
     usrMail = "";
     res.render("register_error.ejs", {
         errString : regErrString
     });
 });
+
 app.get('/userPage',(req,res)=>{
     regErrString = "";
     User.findOne({email : usrMail})
     .then(
         function(results){
-            usrMail = "";
             console.log("successful");
-            const ufn = results.firstName;
-            const uln = results.lastName;
+            res.render('usrPage.ejs');
+        }
+    )
+    .catch(
+        function(err){
+            console.log(err);
+        }
+    );
+});
+
+
+app.get('/happy',(req,res)=>{
+    regErrString = "";
+    User.findOne({email : usrMail})
+    .then(
+        function(results){
+            console.log("successful");
             const email = results.email;
             
-            res.render('usrPage.ejs', {
-                uFirstName : ufn,
-                uLastName: uln,
-                email : email
+            res.render('happy.ejs');
+        }
+    )
+    .catch(
+        function(err){
+            console.log(err);
+        }
+    );
+});
+
+app.get('/sad',(req,res)=>{
+    regErrString = "";
+    User.findOne({email : usrMail})
+    .then(
+        function(results){
+            console.log(results);
+            console.log("successful");
+            
+            res.render('sad.ejs');
+        }
+    )
+    .catch(
+        function(err){
+            console.log(err);
+        }
+    );
+});
+
+app.get('/dashboard', (req,res)=>{
+    regErrString = "";
+    const day = date.getDate();
+    User.findOne({email : usrMail})
+    .then(
+        function(results){
+            console.log("successful");
+            const name = results.firstName;
+            const threads = results.thread;
+
+            let avg = 0;
+            for(let i=0; i<threads.length ; i++){
+                avg += threads[i].scale;
+            } 
+            avg /= threads.length;
+            
+            res.render('dashboard.ejs', {
+                currDate : day,
+                name : name,
+                usrThoughts : threads,
+                report : avg 
             });
         }
     )
@@ -80,22 +144,10 @@ app.get('/userPage',(req,res)=>{
         }
     );
 });
-app.get('Dashboard',(req,res)=>{
-    regErrString = "";
-    res.render('loginPage.ejs');
-});
-app.get('/happy',(req,res)=>{
-    regErrString = "";
-    res.render('loginPage.ejs');
-});
-app.get('/sad',(req,res)=>{
-    regErrString = "";
-    res.render('loginPage.ejs');
-});
 
 
 app.post('/register', function(req,res){
-    console.log(req.body); 
+    //console.log(req.body); 
     
     const fName = req.body.firstName;
     const lName = req.body.lastName;
@@ -106,7 +158,7 @@ app.post('/register', function(req,res){
     User.findOne({email : email})
     .then(
         function(results){
-            console.log(results);
+            //console.log(results);
             if(results == null){
                 const user = new User({
                     firstName : fName,
@@ -139,7 +191,7 @@ app.post('/register', function(req,res){
 
 app.post('/login', function(req,res){
 
-    console.log(req.body);
+    //console.log(req.body);
 
     const email = req.body.email;
     const pw = req.body.password;
@@ -153,7 +205,6 @@ app.post('/login', function(req,res){
             }
             else{
                 usrMail = results.email;
-                console.log(usrMail);
                 res.redirect("/userPage");
             }
         }
@@ -165,8 +216,76 @@ app.post('/login', function(req,res){
     )
 });
 
+app.post("/userPage", function(req, res){
 
+    console.log(req.body);
+    rating = req.body.myRange;
+
+    const day = date.getDate();
+    let str="";
+
+    if(req.body.myRange >= 5){
+        res.redirect("/happy");
+    }
+    else{ 
+        res.redirect("/sad");
+    }
+});
+
+app.post("/happy", function(req, res){
+
+    const day = date.getDate();
+
+    console.log(day);
+    console.log(rating);
+
+    const th = {
+        Date : day,
+        scale : rating,
+        thought : req.body.thoughts
+    }
+
+    User.updateOne({email: usrMail},{$push: {thread: th}})
+    .then(
+        function(){
+            console.log("successful");
+            res.redirect("/dashboard");
+        }
+    )
+    .catch(
+        function(err){
+            console.log(err);
+        }
+    )
+
+});
+
+app.post("/sad", function(req, res){
+    const day = date.getDate();
+
+    console.log(day);
+    console.log(rating);
+
+    const th = {
+        Date : day,
+        scale : rating,
+        thought : req.body.thoughts
+    }
+
+    User.updateOne({email: usrMail},{$push: {thread: th}})
+    .then(
+        function(){
+            console.log("successful");
+            res.redirect("/dashboard");
+        }
+    )
+    .catch(
+        function(err){
+            console.log(err);
+        }
+    )
+});
 
 app.listen(3000 , function(){
-    console.log("server up and runing");
-})
+    console.log("server up and running");
+});

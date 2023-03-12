@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Happy Page</title>
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+		/>
+		<link rel="stylesheet" href="/css/style1.css" />
+	</head>
+	<body>
+		<h2 class="top">CONGRATS! YOU'RE ON THE HAPPY SIDE OF THE SCALE</h2>
+		<div class="container">
+			<div class="left-side">
+				<!-- <i class="fa-solid fa-quote-left"></i> -->
+				<form action="/happy" method="POST">
+					<label for="thoughts"></label><br />
+					<textarea
+						name="thoughts"
+						id="thoughts"
+						cols="30"
+						rows="10"
+						placeholder="Celebrate each victory, no matter how small. Tell us your thoughts behind your happy mood."
+					></textarea>
+					<button type="submit" name="submit">Emotions</button>
+				</form>
+				<!-- <i class="fa-solid fa-quote-right"></i> -->
+			</div>
+			<div class="right-side">
+				<p>SHARE WITH YOUR CLOSE ONES</p>
+				<div class="top-image">
+					<img
+						src="/images/happy_page_share_characters.png"
+						alt="3 happy people"
+						width="300"
+						height="300"
+					/>
+				</div>
+				<div class="bottom-image">
+					<div class="phone">
+						<img src="/images/phone-call_icon.png" alt="phone icon" width="50" />
+					</div>
+					<div class="message">
+						<img src="/images/message_icon.png" alt="message icon" width="50" />
+					</div>
+				</div>
+			</div>
+		</div>
+		<h2 class="bottom">
+			Happiness is contagious and we can feel it radiating from you.
+			Congratulations on having a great mood today.
+		</h2>
+        <a href="/dashboard">DashBoard</a>
+        <a href="/userPage">Emotional Compass</a>
+		<a href="/login">Logout</a>
+	</body>
+</html>
