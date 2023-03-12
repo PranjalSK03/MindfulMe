@@ -50,6 +50,13 @@ Start the server
 ```
 
 
+To run, open any browser and type in url
+
+```bash
+  localhost:3000
+```
+
+
 ## Authors
 
 - [Debankar Dutta Chowdhury](https://www.github.com/deedeecee)
