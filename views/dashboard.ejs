@@ -43,12 +43,12 @@
                         <% } %>
                         <div class="reportdetails">
                             <h2>Overall Performance</h2> 
-                            <% if(report >= 8) {%>
+                            <% if(report >= 7) {%>
                                 <p class="report">"Well done! Life is enjoyable when one experiences contentment."</p>
-                            <% } else if (report >= 5 && report <= 7){ %>
-                                <p class="report">"While not every day may be pleasant, it is imperative to maintain one's own happiness."</p>
-                            <% } else { %>
+                            <% } else if (report <= 4){ %>
                                 <p class="report">"It appears that you are going through a difficult time. We advise that you adhere to our recommendations."</p>
+                            <% } else { %>
+                                <p class="report">"While not every day may be pleasant, it is imperative to maintain one's own happiness."</p>
                             <% } %>
                         </div>
                     <% } else { %>
