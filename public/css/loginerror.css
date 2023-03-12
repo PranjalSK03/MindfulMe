@@ -1,0 +1,42 @@
+html {
+	box-sizing: border-box;
+}
+
+body{
+    margin: 80px;
+	min-height: 70vh;
+    background-image: linear-gradient(90deg, #e9defa 0%, #fbfcdb 100%);
+    font-family: 'Noto Sans',sans-serif;
+    color: #000;
+}
+.container{
+    border: 2px solid black;
+    align-items: center;
+    text-align: center;
+    padding-bottom: 3rem;
+    border-radius: 2rem;
+
+}
+img{
+    height: 30%;
+    width: 30%;
+}
+.loginbtn{
+    padding: 14px 28px;
+    border: 2px solid #800080;
+    background-color: inherit;
+    font-size: 1.2rem;
+    color:#a359a0;
+    text-decoration: none; 
+     
+}
+
+.loginbtn:hover{
+    background-color: rgba(163,89,160,0.6);
+    color: #fbfcdb;
+}
+p{
+    text-transform: uppercase;
+    margin-bottom: 3rem;
+    
+}

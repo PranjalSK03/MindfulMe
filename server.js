@@ -39,7 +39,7 @@ app.get('/',(req,res)=>{
     res.render('index.ejs');
 });
 app.get('/login',(req,res)=>{
-    usrMail = "";
+    //usrMail = "";
     regErrString = "";
     res.render('login.ejs');
 });
@@ -177,7 +177,7 @@ app.post('/register', function(req,res){
                 res.redirect("/registerError");
             }
             else {
-                regErrString = "this email is already in use!";
+                regErrString = "this email is already in use";
                 res.redirect("/registerError");
             }
         }

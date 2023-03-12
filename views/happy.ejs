@@ -9,14 +9,26 @@
 			rel="stylesheet"
 			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
 		/>
-		<link rel="stylesheet" href="/css/style1.css" />
+		<link rel="stylesheet" href="/css/happystyle.css" />
 	</head>
 	<body>
+		<div class="navbar">
+  
+			<div class="dropdown">
+			  <button class="dropbtn"> 
+				<i class="fa-solid fa-ellipsis"></i>			  </button>
+			  <div class="dropdown-content">
+					<a href="/userPage">Emotional Compass</a>
+					<a href="/dashboard">My Logs</a>
+					<a href="/login">Logout</a>
+			  </div>
+			</div> 
+		  </div>
 		<h2 class="top">CONGRATS! YOU'RE ON THE HAPPY SIDE OF THE SCALE</h2>
 		<div class="container">
 			<div class="left-side">
 				<!-- <i class="fa-solid fa-quote-left"></i> -->
-				<form action="/happy" method="POST">
+				<form class="form"action="/happy" method="POST">
 					<label for="thoughts"></label><br />
 					<textarea
 						name="thoughts"
@@ -24,8 +36,8 @@
 						cols="30"
 						rows="10"
 						placeholder="Celebrate each victory, no matter how small. Tell us your thoughts behind your happy mood."
-					></textarea>
-					<button type="submit" name="submit">Emotions</button>
+					></textarea><br>
+					<button class="happybtn"type="submit" name="submit">submit thoughts</button>
 				</form>
 				<!-- <i class="fa-solid fa-quote-right"></i> -->
 			</div>
@@ -53,8 +65,5 @@
 			Happiness is contagious and we can feel it radiating from you.
 			Congratulations on having a great mood today.
 		</h2>
-        <a href="/dashboard">DashBoard</a>
-        <a href="/userPage">Emotional Compass</a>
-		<a href="/login">Logout</a>
 	</body>
 </html>

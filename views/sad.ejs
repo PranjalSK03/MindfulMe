@@ -1,26 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="stylesheet" href="/css/style1.css">
-		<title>Happy Page</title>
-    </head>
-    <body>
-        <form action="/sad" method="POST">
-            <label for="thoughts"></label><br />
-            <textarea
-                name="thoughts"
-                id="thoughts"
-                cols="30"
-                rows="10"
-                placeholder="Wanna Share your thoughts. Promise we will keep it a secrect between us."
-            ></textarea>
-            <button type="submit" name="submit">Emotions</button>
-        </form>
-        <a href="/dashboard">DashBoard</a>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sad page</title>
+    <link rel="stylesheet" href="/css/sadstyle.css" type="text/css">
+
+</head>
+<body>
+    <div class="sad-container">
+        <div class="subcontainer1">
+            <p>     
+                We are so sorry to hear that you are feeling sad and depressed. Please 
+                know that you are NOT alone and that we are here for you.
+            </p>
+            <p>
+                It's okay to not be okay, and it's okay to ask for help.  
+                We care about you and want to support you in any way that we can.
+                Take care of yourself and remember that things will get better.
+            </p>
+            </div>
+            <h4 class="header1">
+                Please proceed with one or more steps below to uplift your mood (Recommended)
+            </h4>
+        <div class="subcontainer2">
+            
+            <div class="left-side">
+                
+                <p> 
+                    <ul>
+                        <li>contact your close ones and share your difficulties</li>
+                        <li>listen to our suggested music</li>
+                        <li>contact nearest psychiatrist/therapist</li>
+                    </ul>
+
+                </p>
+               
+            </div>
+            <div class="right-side">
+				<form action="/sad" method="POST">
+					<label for="thoughts"></label><br />
+					<textarea
+						name="thoughts"
+						id="thoughts"
+						cols="30"
+						rows="10"
+						placeholder="Reason for your current mood"
+					></textarea>
+                    
+                    <button class="thoughtsbtn"type="submit" name="submit">submit thoughts</button>
+				</form>
+
+                
+
+			</div>
+
+        </div>
+        <!--for drop down menu 
+            <a href="/dashboard">DashBoard</a>
         <a href="/userPage">Emotional Compass</a>
-        <a href="/login">Logout</a>
-    </body>
+        <a href="/login">Logout</a> -->
+
+    </div>
+
+</body>
 </html>
