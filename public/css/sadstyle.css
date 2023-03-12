@@ -48,10 +48,11 @@ li{
 	font-weight: bold;
 }
 .thoughtsbtn:hover{
-    background-color: rgba(11,88,132,0.4);
+    background-color: #000;
 	color: #dfe9f3;
 	cursor: pointer;
 }
+
 .header1{
     font-family: 'Solway', sans-serif;
     font-size: 1.7rem;
@@ -66,4 +67,8 @@ textarea {
 	margin-top: 50px;
 	width: 550px;
 	font-size: 1.1rem;
+}
+
+.linksa{
+    text-decoration: none;
 }
