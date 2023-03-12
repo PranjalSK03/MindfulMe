@@ -103,8 +103,29 @@ app.get('/sad',(req,res)=>{
         function(results){
             console.log(results);
             console.log("successful");
+            let v = "";
+            let ch = Math.floor(Math.random() * 4)+1;
+            switch(ch){
+                case 1:
+                    v = "https://www.youtube.com/watch?v=3pNpHZ1yv3I"
+                    break;
+                case 2:
+                    v = "https://www.youtube.com/watch?v=_BtXPQimVhg"
+                    break;
+                case 3:
+                    v = "https://www.youtube.com/watch?v=jNUHb5ZzqLQ"
+                    break;
+                case 4:
+                    v = "https://www.youtube.com/watch?v=NkstXAUSpyM"
+                    break;
+                case 5:
+                    v = "https://www.youtube.com/watch?v=MS7TNg9fR1U"
+                    break;
+            }
             
-            res.render('sad.ejs');
+            res.render('sad.ejs', {
+                variab : v
+            });
         }
     )
     .catch(
