@@ -1,0 +1,136 @@
+/* happy wala */
+@import url('https://fonts.googleapis.com/css2?family=ABeeZee&family=Hanken+Grotesk:wght@400;700&family=Noto+Sans:wght@300&display=swap');
+
+html {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 80px;
+	min-height: 100vh;
+	margin: 20px 80px;
+	background-image: linear-gradient(90deg, #f6d365, #fda085);
+	text-align: center;
+}
+
+.top {
+	font-family: 'Hanken Grotesk', sans-serif;
+	font-size: 3rem;
+}
+
+.container {
+	display: flex;
+	justify-content: space-around;
+}
+
+textarea {
+	background-color: #fff;
+	border: none;
+	padding: 20px;
+	box-shadow: -20px -20px 0 #000;
+	font-family: 'Noto Sans', sans-serif;
+	margin-top: 50px;
+	width: 550px;
+	font-size: 1.1rem;
+}
+
+p {
+	font-family: 'Hanken Grotesk', sans-serif;
+	color: #000000;
+	font-size: 1.3rem;
+}
+
+.bottom-image {
+	display: flex;
+	justify-content: space-evenly;
+}
+.happybtn{
+	border: 2px solid #0b5884;
+	color:#0b5884;
+	background-color: inherit;
+	padding: 1rem 2rem;
+	font-family: 'Noto Sans', sans-serif;
+	font-weight: bold;
+	margin-top: 1rem;
+}
+.happybtn:hover{
+	background-color: #000;
+	color: #dfe9f3;
+	cursor: pointer;
+}
+.form{
+	display: block;
+}
+.bottom {
+	font-family: 'ABeeZee', sans-serif;
+	font-size: 2.5rem;
+}
+
+
+
+.navbar {
+	overflow: hidden;
+	background-color: transparent;
+	border: 1px solid black;
+	position: scroll;
+  }
+  
+  .navbar a {
+	float: left;
+	font-size: 16px;
+	color: white;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+  }
+  
+  .dropdown {
+	float: left;
+	overflow: hidden;
+  }
+  .fa-solid{
+  	border:1px solid black;
+	color:white;
+	background-color: #000000;
+	padding: inherit;
+	border-radius: 10%;
+}
+  .dropdown .dropbtn {
+	font-size: 16px;  
+	border: none;
+	outline: none;
+	color: white;
+	padding: 14px 16px;
+	background-color: inherit;
+	font-family: inherit;
+	margin: 0;
+  }
+  
+  .dropdown-content {
+	display: none;
+	position: absolute;
+	background-color: transparent;
+	min-width: 160px;
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	z-index: 1;
+	border: 1px solid black;
+  }
+  
+  .dropdown-content a {
+	float: none;
+	color: black;
+	padding: 12px 16px;
+	text-decoration: none;
+	display: block;
+	text-align: left;
+  }
+  
+  .dropdown-content a:hover {
+	background-color: #000;
+	color: #dfe9f3;
+	cursor: pointer;
+  }
+  
+  .dropdown:hover .dropdown-content {
+	display: flex;
+  }

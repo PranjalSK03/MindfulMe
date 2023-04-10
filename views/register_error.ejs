@@ -7,14 +7,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <title>Document</title>
-    <link rel="stylesheet" href="/css/style.css" type="text/css">
+    <link rel="stylesheet" href="/css/loginerror.css" type="text/css">
 </head>
 <body>
 
-    <div>
+    <div class="container">
+        <img src="/images/oops.png" alt="oops picture">
         <h1>There seems to be some error while registering you!</h1>
-        <h3>ERROR !!!! :-> <%= errString %></h3>
-        <a href="/register">Register Again</a>
+        <p><%= errString %></p>
+        <a class="loginbtn"href="/login">Login</a>
     </div>
     
 </body>

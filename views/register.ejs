@@ -10,9 +10,9 @@
 </head>
 <body>
     <div class="container">
-        <div>
-            <h3>Start by creating a free account!</h3>
-            <h3>Already have one? <a href="/login">Log in</a> here</h3>
+        <div class="block1">
+            <h3 class="login-header">Start by creating a <b>free</b> account!</h3>
+            <h3 class="login-header2">Already have one? <a class="loginlink"href="/login">Log in</a> here</h3>
             
             <form action="/register" method="POST">
                 <div>
@@ -32,14 +32,16 @@
                     <input type="password" name="password" required>
                 </div>
                 <div>
-                    <label for="gaurdianEmail">Gaurdian's Email</label>
+                    <label for="guardianEmail">Guardian's Email</label>
                     <input type="email" name="gEmail">
                 </div>
-                <button type="submit">Register</button>
+                <div class="submitbtn">
+                    <button class="submit1 submit" type="submit">CREATE ACCOUNT</button>
+                </div>
                 
                 
             </form>
-
+            
             <img class="sign-up-pic"src="../images/sign_up page character.png" alt="sign_up picture">
         </div>
         

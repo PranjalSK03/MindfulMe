@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=Solway:wght@300;400&display=swap');
+
+
+
+body{
+    padding: 1rem;
+    height: 100vh;
+    font-family: 'Noto Sans',sans-serif;
+  } 
+.container{
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    align-items: center;
+    justify-content: space-around;
+}
+.left-side{
+    
+    background-color: #ebedee;
+    margin: 1% 2% 1% 0; 
+    padding: 70% 0;
+    text-align: center;
+    position: relative;
+
+}
+.websitename{
+    font-size: 800;
+    position: relative;
+    margin: 0%;
+    text-align: center;
+    background-color: #555;
+    color: #fff;
+    padding: 4%;
+    
+}
+.right-side{
+    display: block;  
+}
+.data{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    background-color: #ebedee;
+    padding: 3% 0;
+    margin-top: 3rem;
+    border-radius: 1rem 1rem 0 0;
+
+}
+.two{
+    text-align: center;
+}
+.three{
+    text-align: center;
+}
+
+.fourth{
+    border:1px solid black;
+    text-align: center;
+    align-items: center;
+    padding: 3% 0;
+    background-color: #ebedee;
+    border-radius: 0 0 1rem 1rem;
+
+}
+
+*/
+body {
+    margin: 0;
+    font-family: "Lato", sans-serif;
+  }
+  
+  .sidebar {
+    margin: 0;
+    padding: 0;
+    width: 400px;
+    background-color: #f1f1f1;
+    position: fixed;
+    height: 100%;
+    overflow: auto;
+  }
+  
+  .links{
+    margin-top: 1rem;
+  }
+  .sidebar a {
+    display: block;
+    color: black;
+    padding: 16px;
+    text-decoration: none;
+  }
+   
+  .sidebar a.active {
+    background-color: #04AA6D;
+    color: white;
+  }
+  
+  .sidebar a:hover:not(.active) {
+    background-color: #555;
+    color: white;
+  }
+  
+  .one{
+    margin-left: 10%;
+  }
+  div.content {
+    margin-left: 400px;
+    padding: 1px 16px;
+    height: 1000px;
+  }
+  b{
+    font-size: 1rem;
+  }
+  .para{
+    margin-bottom: 2rem;
+  }
+  .loginbtn{
+    
+    padding: 14px 28px;
+    border: 2px solid #800080;
+    background-color: inherit;
+    font-size: 1.2rem;
+    color:#a359a0;
+    text-decoration: none; 
+     
+}
+
+.loginbtn:hover{
+    background-color: rgba(163,89,160,0.6);
+    color: #fbfcdb;
+}
+.reportdetails{
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+}
+.report{
+  font-size: large;
+}
+  @media screen and (max-width: 700px) {
+    .sidebar {
+      width: 100%;
+      height: auto;
+      position: relative;
+    }
+    .sidebar a {float: left;}
+    div.content {margin-left: 0;}
+  }
+  
+  @media screen and (max-width: 400px) {
+    .sidebar a {
+      text-align: center;
+      float: none;
+    }
+  }
+  
+ 

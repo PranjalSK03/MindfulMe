@@ -9,9 +9,21 @@
 			rel="stylesheet"
 			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
 		/>
-		<link rel="stylesheet" href="/css/style2.css" />
+		<link rel="stylesheet" href="/css/emotionalstyle.css" />
 	</head>
 	<body>
+		<div class="navbar">
+  
+			<div class="dropdown">
+			  <button class="dropbtn"> 
+				<i class="fa-solid fa-ellipsis"></i>			  </button>
+			  <div class="dropdown-content">
+					<a href="/userPage">Emotional Compass</a>
+					<a href="/dashboard">My Logs</a>
+					<a href="/login">Logout</a>
+			  </div>
+			</div> 
+		  </div>
 		<h1>Emotional Compass</h1>
 		<h3>
 			IMPROVE YOUR MENTAL HEALTH AND WELL-BEING WITH OUR MOOD-MONITORING TOOL
@@ -29,8 +41,9 @@
 		</div>
        
             <div class="moodSliderContainer">
+				<i class="fa-regular fa-face-frown"></i>
                 <form action="/userPage" method="POST">
-                    <i class="fa-regular fa-face-frown"></i>
+                   
                     <input
                         type="range"
                         min="1"
@@ -40,16 +53,15 @@
                         id="myRange"
                         name="myRange"
                     />
-                    <i class="fa-regular fa-face-smile"></i>
-                    <button type="submit" name="submit">Insight</button>
+                    <pre class="input-num"> 1   2   3   4   5   6   7   8  9  10</pre>
+                    <button class="checkyourmood"type="submit" name="submit">Check Your Mood!</button>
                 </form>
+				<i class="fa-regular fa-face-smile"></i>
                 
             </div>
         </body>
         <div>
-			<a href="/userPage">Emotional Compass</a>
-            <a href="/dashboard">Dashboard</a>
-            <a href="/login">Logout</a>
+			
         </div>
 	</body>
 </html>

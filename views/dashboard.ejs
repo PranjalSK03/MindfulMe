@@ -4,32 +4,68 @@
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="stylesheet" href="/css/style.css">
-		<title>Happy Page</title>
+        <link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+		/>
+        <link rel="stylesheet" href="/css/dashstyle.css">
+		<title></title>
     </head>
     <body>
-        <h3><%= name %> - <%= currDate %></h3>
-        <% if(usrThoughts.length !== 0) { %>
-            <% for(var i=0; i<usrThoughts.length; i++) {%>
-                <p><%= usrThoughts[i].Date %></p>
-                <p><%= usrThoughts[i].scale %></p>
-                <p><%= usrThoughts[i].thought %></p>
-            <% } %>
-        <% } else { %>
-            <p>Not started !!! record your mood today --></p>
-            <a href="/userPage"></a>
-        <% } %>
 
-        <h2>Your REPORT !!!</h2> 
-        <% if(report >= 7) {%>
-            <h3>"Nice going ! life is fun when you are happy !"</h3>
-        <% } else if (report <=3){ %>
-            <h3>"Not all day are good but you need to keep your self happy!"</h3>
-        <% } else { %>
-            <h3>"too rough days it seems, please seek help and talk to some one !"</h3>
-        <% } %>
+        <div class="sidebar">
+            <h1 class="websitename">MindfulMe</h1>
 
-        <a href="/userPage">Emotional Compass</a>
-        <a href="/login">Logout</a>
+            <div class="links">
+                <a href="/userPage"><i class="fa-sharp fa-regular fa-compass"></i>  &emsp;Emotional Compass</a>                    <br>
+                <a href="/login"><i class="fa-solid fa-arrow-right-from-bracket"></i> &emsp;Logout</a>
+            </div>
+          </div>
+          
+          <div class="content">
+            <h2>Welcome back, <%= name %> </h2>
+            <p><%= currDate %></p>
+            <div class="subcontainer">
+                <div class="overview">
+                    <% if(usrThoughts.length !== 0) { %>
+                        <% for(var i=0; i<usrThoughts.length; i++) {%>
+                            <div class="data">
+                                <%if(usrThoughts[i].scale < 5){%>
+                                    <div class="one">Overview<br><b>Sad</b></div>  
+                                <% }else{ %>
+                                    <div class="one">Overview<br><b>Happy</b></div>
+                                <% } %>
+                                <div class="two"><%= usrThoughts[i].Date %><br>Date</div>
+                                <div class="three"><%= usrThoughts[i].scale %><br>Rating</div>
+                            </div>
+                            <div class="fourth"><%= usrThoughts[i].thought %></div>
+                            
+                        <% } %>
+                        <div class="reportdetails">
+                            <h2>Overall Performance</h2> 
+                            <% if(report >= 7) {%>
+                                <p class="report">"Well done! Life is enjoyable when one experiences contentment."</p>
+                            <% } else if (report <= 4){ %>
+                                <p class="report">"It appears that you are going through a difficult time. We advise that you adhere to our recommendations."</p>
+                            <% } else { %>
+                                <p class="report">"While not every day may be pleasant, it is imperative to maintain one's own happiness."</p>
+                            <% } %>
+                        </div>
+                    <% } else { %>
+                        <p class="para">Not started yet, record your mood today </p>
+                        <a class="loginbtn"href="/userPage">Emotional Compass</a>
+                    <% } %>
+                </div>
+                
+
+            </div>
+          </div>
+
+        </div>
+        
+        
+
+        
+        
     </body>
 </html>

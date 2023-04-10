@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=ABeeZee&family=Hanken+Grotesk:wght@400;700&family=Noto+Sans:wght@300&display=swap');
 
+
+/*---------- style for index ------------*/
 html {
 	box-sizing: border-box;
 }
@@ -27,11 +29,7 @@ body{
     padding-left: 20px;
     text-align: center;
   }
-  .login-header{
-    display: block;
-    align-items: center;
-    color: #800080;
-  }
+  
   .header1{
     font-family: 'Hanken Grotesk', sans-serif;
     color: #800080;
@@ -51,25 +49,102 @@ body{
 }
 
 .loginbtn:hover{
-    background-color: #a359a1;
-    opacity: 0.7;
+    background-color: rgba(163,89,160,0.6);
     color: #fbfcdb;
 }
 
 .sign-up-pic{
     align-items: center;
+    margin-left: 1.5rem;
     width:12rem;
     height: 10rem;
 }
 a{
     text-decoration: none;
 }
+
+
+
+/* ---------style for login page -------------*/
+
+.block1{
+    display: block;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin-top: -5rem;
+}
+.formcls{
+    margin-top: 3em;
+}
+.header{
+    margin-top: 2.5em;
+}
+label{
+    color:#a359a0;
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 1.25rem;
+    background-color: inherit;
+    margin-top: 0.5rem;
+}
 input{
-    border: 2px solid #800080;
-    width:  15rem;
-    height: 1.5rem;
+    border: 1.2px solid #800080;
+    margin: 1px;
+    padding: .5rem 1.5rem;
+    font-family: 'Noto Sans', sans-serif;
+    background-color: rgba(128,0,120,0.05);
+    
+}
+.registerlink{
+    color:#6141ac;
+    font-style: italic;
+}
+.loginboypic{
+    position: inherit;
+    margin-top: 5em;
+    height: 15em;
+    width: 18em;
+    left:-2em;
+}
+.registerlink:hover{
+    text-decoration: underline;
+}
+.login-header{
+    font-family: 'Noto Sans', sans-serif;
+    text-align: center;
+    color: #a359a0;
+}
+.login-header2{
+    color:#a359a0;
+    font-weight: normal;
+    font-family:  'Noto Sans', sans-serif;
+
+}
+
+.submitbtn{
+    margin-top: 2rem;
+}
+.submit{
+    border: 1px solid #800080;
+    padding: 0.4rem 5.5rem;
+    background-color: #800080;
+    font-family: 'Noto Sans', sans-serif;
+    font-weight: bold;
+    font-size: large;
+    color: #ffffff;
 }
 input,label{
     display: block;
 }
-
+/* -----------register page----------------- */
+.submit1{
+    padding: 0.4rem 2.5rem;
+    border-radius: 3%;
+}
+.loginlink{
+    font-style: italic;
+}
+.loginlink:hover{
+    text-decoration: underline;
+    
+}
